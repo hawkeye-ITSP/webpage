@@ -17,19 +17,41 @@
      <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" >
      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" >
      <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
      <!-- <link rel="stylesheet" href="{% static 'css/header.sass' %}"> -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+     <!-- Fonts external -->
+     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500;700&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
      <!-- MAIN CSS -->
+     <style>
+          li {
+          transition: 0.3s;
+          }
+          li.bg:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          }
+          .no-pad {
+               padding: 0;
+               margin: 0;
+          }
+     </style>
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
      <!-- <div class="container"> -->
+<div id="filler"class='container' style='background-image: url(/static/img/header.jpg); background-size: cover; height: 30rem; width: 100%;'>
+     <div class='jumbotron' style='background-color:transparent; align-items: center; justify-content: center;'>
+          <img src="/static/img/icon.jpeg" alt='snapmath' style="width: auto; height: 150px;" />
+          <p class="lead text-center" style="color:rgb(220, 255, 20); font-family: 'Patua One', cursive; font-size: 30px;">A site for converting any formula image into LaTeX Format</p>
+     </div>
+</div>
 <div>
      <!-- MENU -->
      <header>
-          <section class="navbar navbar-default navbar-static-top" role="navigation" style="align-items: center;">
+          <section class="navbar navbar-inverse navbar-static-top" role="navigation" style="align-items: center; width: 100%;">
                <div class="container">
                     <div class="navbar-header">
                          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -41,11 +63,10 @@
 
                          <!-- lOGO TEXT HERE -->
                          <ul class="nav navbar-nav">
-                              <li><a style="color: #e6e6e6; font-size: 28px; font-family: Aileron" href="/" class="navbar-brand">SnapMath</a></li>
-                         
-                              <li><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu;" href="/" class="smoothScroll">Home</a></li>
-                              <li><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu" href="images" class="smoothScroll">View images</a></li>
-                              <li><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu" href="about" class="smoothScroll">About us</a></li>
+                              <li><a style="color: #e6e6e6; font-size: 28px; font-family: MuseoModerno, cursive; font-weight: 500;" href="/" class="navbar-brand">SnapMath</a></li>
+                              <li class='bg'><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu;" href="/" class="smoothScroll ">Home</a></li>
+                              <li class='bg'><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu" href="images" class="smoothScroll">View images</a></li>
+                              <li class='bg'><a style="color: #e6e6e6; font-size: 16px; font-family: Ubuntu" href="about" class="smoothScroll">About us</a></li>
                          </ul>
                          <!-- MENU LINKS -->
                     </div>
@@ -57,14 +78,13 @@
      </header>
 </div>
 
-<br><br>
+
      <!-- HOME -->
 
 
-<div class="container">
+<div class="container no-pad">
      {% block content%}
      {% endblock %}
-    
 </div>
      
 <!-- FOOTER -->
@@ -91,7 +111,7 @@
 <script  src="{% static 'js/smoothscroll.js' %}"></script>
 <script  src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script  src="{% static 'js/custom.js' %}"></script>
-
+<script  src="{% static 'js/upload.js' %}"></script>
 <script>
 // Add the following code if you want the name of the file appear on select
 $(".custom-file-input").on("change", function() {
